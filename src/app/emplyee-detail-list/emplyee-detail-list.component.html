@@ -1,0 +1,18 @@
+
+
+<table class="table table-hover">
+
+  <tr class="check" *ngFor="let el of service.list">
+  <td  (click)="PopulateData(el)">{{el.empName}}</td>
+  <td>{{el.empQuali}}</td>
+  <!-- <td>{{el.empId}}</td> -->
+  <td>{{el.empDesignation}}</td>
+  <td>{{el.empAddress}}</td>
+  <td>{{el.empNumber}}</td>
+  <td>
+    <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(el.empId)"></i>
+  </td>
+</tr>
+</table>
+
+<!-- <button type="submit" (click)="">Check</button> -->

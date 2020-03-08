@@ -1,0 +1,102 @@
+<form class="check" #form="ngForm" autocomplete="off"  (submit)="onSubmit(form)">
+  <input type="hidden" name="empId" [value]=service.vendorData.id>
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text bg-white">
+  <i class="far fa-user" [class.red-icon]="name.touched && name.invalid"></i>
+</div>
+
+</div>
+<input name="name" #name="ngModel" [(ngModel)]="service.vendorData.name" 
+class="form-control" placeholder="Vendor Name" required maxlength="60" minlength="3">
+</div>
+<div >
+  <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+  <span  class="text-muted" *ngIf="!form.controls['name'].valid && form.controls['name']?.touched" > Please enter a valid first name</span>
+
+</div>
+</div>
+<div class="form-group">
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text bg-white">
+  <i class="fas fa-book-open" [class.red-icon]="dob.touched && dob.invalid"></i>
+</div>
+</div>
+<input type="date" name="dob" #dob="ngModel" [(ngModel)]="service.vendorData.dob" 
+class="form-control" placeholder="Vendor DOB" required>
+</div>
+<div>
+  <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+  <span style="background-color:red" class="text-muted" *ngIf="!form.controls['dob'].valid && form.controls['dob']?.touched" style="color:red"> Please enter a field</span>
+
+</div>
+</div>
+<div class="form-group" >
+<div class="input-group" >
+  <div class="input-group-prepend">
+  <div class="input-group-text bg-white">
+      <i class="fas fa-book-open" [class.red-icon]="age.touched && age.invalid"></i>
+  </div>
+  </div>
+  <input name="age" #age="ngModel" [(ngModel)]="service.vendorData.age" class="form-control" placeholder="Vendor Age" required>
+  </div>
+  <div>
+      <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+      <span style="background-color:red" class="text-muted" *ngIf="!form.controls['age'].valid && form.controls['age']?.touched" style="color:red"> Please enter a valid field</span>
+  
+  </div>
+</div>
+  <div class="form-group">
+<div class="input-group">
+  <div class="input-group-prepend">
+  <div class="input-group-text bg-white">
+      <i class="fas fa-map-marker" [class.red-icon]="gender.touched && gender.invalid"></i>
+  </div>
+  </div>
+  <input name="gender" #gender="ngModel" [(ngModel)]="service.vendorData.gender" class="form-control" placeholder="Gender" required>
+  </div>
+  <div>
+      <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+      <span style="background-color:red" class="text-muted" *ngIf="!form.controls['gender'].valid && form.controls['gender']?.touched" style="color:red"> Please enter a valid Gender</span>
+  
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="input-group">
+      <div class="input-group-prepend">
+      <div class="input-group-text bg-white">
+          <i class="fas fa-mobile-alt" [class.red-icon]="mobile.touched && mobile.invalid"></i>
+      </div>
+      </div>
+      <input type="number" name="mobile" #mobile="ngModel" [(ngModel)]="service.vendorData.mobile" 
+       class="form-control" placeholder="Mobile" maxlength="10" minlength="10" required >
+      </div>
+      <div>
+          <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+          <span style="background-color:red" class="text-muted" *ngIf="!form.controls['mobile'].valid && form.controls['mobile']?.touched" style="color:red"> Please enter a valid Number</span>
+      
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+      <div class="input-group-text bg-white">
+          <i class="fas fa-map-marker" [class.red-icon]="address.touched && address.invalid"></i>
+      </div>
+      </div>
+      <input name="address" #address="ngModel" [(ngModel)]="service.vendorData.address" class="form-control" placeholder="Address" required>
+      </div>
+      <div>
+          <!-- <span hidden="form.empName.$touched && service.formData.empName.$invalid"    style="color:red">The Address Field is required</span> -->
+          <span style="background-color:red" class="text-muted" *ngIf="!form.controls['address'].valid && form.controls['address']?.touched" style="color:red"> Please enter a valid Address</span>
+      
+      </div>
+    </div>
+  <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+  </div>
+
+  </form>

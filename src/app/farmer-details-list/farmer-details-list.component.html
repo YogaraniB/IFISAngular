@@ -1,0 +1,29 @@
+
+
+<table class="table table-hover">
+
+    <tr class="check" *ngFor="let el of service.list2">
+    <td  (click)="PopulateData(el)">{{el.name}}</td>
+    <td>{{el.age}}</td>
+    <td>{{el.land}}</td>
+    <td>{{el.quantity}}</td>
+    <td>{{el.address}}</td>
+    <td>{{el.gender}}</td>
+    <td>{{el.forming}}</td>
+    <td>{{el.age}}</td>
+    <td>{{el.dob}}</td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(el.id)"></i>
+    </td>
+  </tr>
+  </table>
+  
+  <!-- <button type="submit" (click)="">Check</button> -->
+  <!-- <td>{{el.age}}</td>
+    <td>{{el.land}}</td>
+    <td>{{el.quantity}}</td>
+    <td>{{el.address}}</td>
+    <td>{{el.gender}}</td>
+    <td>{{el.forming}}</td>
+    <td>{{el.age}}</td>
+    <td>{{el.dob}}</td> -->
