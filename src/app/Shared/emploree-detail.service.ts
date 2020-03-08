@@ -17,7 +17,7 @@ let headers = new HttpHeaders({
 })
 export class EmploreeDetailService {
 
-  appurl = 'http://localhost:8080/user';
+  appurl = 'http://localhost:9090/ifis';
   // appurl1 = 'http://localhost:8080/ifis';
   list: EmployeeData[];
   list2: farmer[];
